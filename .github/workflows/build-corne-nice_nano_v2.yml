@@ -1,7 +1,7 @@
 # Copyright 2021 Manna Harbour
 # https://github.com/manna-harbour/miryoku
 
-name: 'Build Example choc-corne nice_nano_v2'
+name: 'Build corne nice_nano_v2'
 on: workflow_dispatch
 jobs:
   build:
@@ -9,4 +9,4 @@ jobs:
     secrets: inherit
     with:
       board: '["nice_nano_v2"]'
-      shield: '["choc-corne_left","choc-corne_right"]'
+      shield: '["corne_left","corne_right"]'
