@@ -5,20 +5,29 @@ name: 'Build corne nice_nano_v2'
 on: workflow_dispatch
 jobs:
   build:
-    uses: ./.github/workflows/main.yml
-    secrets: inherit
-    with:
-      include:
-        - board: nice_nano_v2
-          shield: corne_left
-          snippet: studio-rpc-usb-uart
-          kconfig:
-            - CONFIG_ZMK_PM_SOFT_OFF=y
-          alphas:
-            - QWERTY
-        - board: nice_nano_v2
-          shield: corne_right
-          kconfig:
-            - CONFIG_ZMK_PM_SOFT_OFF=y
-          alphas:
-            - QWERTY
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config:
+          - board: nice_nano_v2
+            shield: corne_left
+            snippet: studio-rpc-usb-uart
+            kconfig: CONFIG_ZMK_PM_SOFT_OFF=y
+            alphas: QWERTY
+          - board: nice_nano_v2
+            shield: corne_right
+            kconfig: CONFIG_ZMK_PM_SOFT_OFF=y
+            alphas: QWERTY
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run build
+        run: |
+          echo "Board: ${{ matrix.config.board }}"
+          echo "Shield: ${{ matrix.config.shield }}"
+          echo "Snippet: ${{ matrix.config.snippet }}"
+          echo "KConfig: ${{ matrix.config.kconfig }}"
+          echo "Alphas: ${{ matrix.config.alphas }}"
+
