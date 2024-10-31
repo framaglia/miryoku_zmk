@@ -59,7 +59,7 @@ jobs:
       matrix:
         board: ${{ fromJSON(inputs.board) }}
         shield: ${{ fromJSON(inputs.shield) }}
-        snipper: ${{ fromJSON(inputs.snippet) }}
+        snippet: ${{ fromJSON(inputs.snippet) }}
         alphas: ${{ fromJSON(inputs.alphas) }}
         extra: ${{ fromJSON(inputs.extra) }}
         tap: ${{ fromJSON(inputs.tap) }}
