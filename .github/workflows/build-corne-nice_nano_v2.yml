@@ -4,22 +4,11 @@
 name: 'Build corne nice_nano_v2'
 on: workflow_dispatch
 jobs:
-  build_left:
+  build:
     uses: ./.github/workflows/main.yml
     secrets: inherit
     with:
       board: '["nice_nano_v2"]'
-      shield: '["corne_left"]'
-      snippet: '["studio-rpc-usb-uart"]'
-      kconfig: '["CONFIG_ZMK_PM_SOFT_OFF=y","CONFIG_ZMK_STUDIO=y"]'
+      shield: '["corne_left","corne_right"]'
+      kconfig: '["CONFIG_ZMK_PM_SOFT_OFF=y",CONFIG_ZMK_STUDIO=y]'
       alphas: '["QWERTY"]'
-
-  build_right:
-    uses: ./.github/workflows/main.yml
-    secrets: inherit
-    with:
-      board: '["nice_nano_v2"]'
-      shield: '["corne_right"]'
-      kconfig: '["CONFIG_ZMK_PM_SOFT_OFF=y","CONFIG_ZMK_STUDIO=y"]'
-      alphas: '["QWERTY"]'
-
