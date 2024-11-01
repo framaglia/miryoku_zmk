@@ -11,6 +11,9 @@ on:
       shield:
         type: string
         default: '["default"]'
+      snippet:
+        type: string
+        default: '["default"]'
       alphas:
         type: string
         default: '["default"]'
@@ -56,6 +59,7 @@ jobs:
       matrix:
         board: ${{ fromJSON(inputs.board) }}
         shield: ${{ fromJSON(inputs.shield) }}
+        snippet: ${{ fromJSON(inputs.snippet) }}
         alphas: ${{ fromJSON(inputs.alphas) }}
         extra: ${{ fromJSON(inputs.extra) }}
         tap: ${{ fromJSON(inputs.tap) }}
