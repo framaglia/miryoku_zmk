@@ -14,8 +14,8 @@ U_NP,              U_NP,              &kp LCTRL,         &kp SPACE,         &kp 
 #if !defined(MIRYOKU_LAYER_GAME)
   #define MIRYOKU_LAYER_GAME MIRYOKU_ALTERNATIVES_GAME
 #endif
-// Note: MIRYOKU_LAYERMAPPING_GAME will be defined in miryoku_game_layer_mapping.h
-// after MIRYOKU_MAPPING is available, but before miryoku.dtsi uses it
+// MIRYOKU_LAYERMAPPING_GAME will be defined in miryoku_game_layer_mapping.h
+// after MIRYOKU_MAPPING is available (which happens after the mapping file is included)
 
 // Add GAME layer to the layer list
 // Must be defined before miryoku.h is included (which includes miryoku_layer_list.h)
