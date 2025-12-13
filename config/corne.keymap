@@ -4,5 +4,4 @@
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
-// Temporarily disabled to test if combo file is causing issues
-// #include "../miryoku/miryoku_game_activation.dtsi"
+#include "../miryoku/miryoku_game_activation.dtsi"
