@@ -1,27 +1,24 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-// Define GAME layer key bindings FIRST (before layer list override)
-// This ensures MIRYOKU_ALTERNATIVES_GAME is defined when needed
-#define MIRYOKU_ALTERNATIVES_GAME \
-&kp R,             &kp E,             &kp G,             &kp T,             &kp TAB,           U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
-&kp W,             &kp A,             &kp S,             &kp D,             &kp F,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
-&kp Q,             &kp Z,             &kp X,             &kp C,             &kp V,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
+//#define MIRYOKU_KLUDGE_DOUBLETAPBOOT
+#define MIRYOKU_KLUDGE_SOFT_OFF
+
+#define XXX &none
+
+// Warzone gaming layer (LEFT HAND ONLY - right side disabled for mouse use)
+// Mouse handles: Aim, shoot, weapon switching (mouse wheel)
+// QWERTY layout with gaming bindings:
+// Top row: Q, W, E, R, T (Equipment, Movement, Interact, Reload, Chat) | Right side disabled
+// Middle row: A, S, D, F, G (Movement, Movement, Movement, Interact, Ping) | Right side disabled  
+// Bottom row: Z, X, C, V (Prone, Equipment wheel, Melee, Armor plates) | Right side disabled
+// Thumbs: Ctrl (crouch), Space (jump), Shift (sprint) | Right thumbs disabled
+#define MIRYOKU_LAYER_GAME \
+&kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
+&kp A,             &kp S,             &kp D,             &kp F,             &kp G,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
+&kp Z,             &kp X,             &kp C,             &kp V,             &kp TAB,           U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
 U_NP,              U_NP,              &kp LCTRL,         &kp SPACE,         &kp LSHFT,         U_NP,              U_NP,             U_NP,             U_NP,              U_NP
 
-// Define GAME layer selection (before layer list override)
-// These must be defined before miryoku.h includes miryoku_layer_selection.h
-#if !defined(MIRYOKU_LAYER_GAME)
-  #define MIRYOKU_LAYER_GAME MIRYOKU_ALTERNATIVES_GAME
-#endif
-// MIRYOKU_LAYERMAPPING_GAME will be defined in miryoku_game_layer_mapping.h
-// after MIRYOKU_MAPPING is available (which happens after the mapping file is included)
-
-// Add GAME layer to the layer list
-// Must be defined before miryoku.h is included
-// TEST: Temporarily disable override to see if base build works
-/*
-#undef MIRYOKU_LAYER_LIST
 #define MIRYOKU_LAYER_LIST \
 MIRYOKU_X(BASE,   "Base") \
 MIRYOKU_X(EXTRA,  "Extra") \
@@ -34,49 +31,28 @@ MIRYOKU_X(NUM,    "Num") \
 MIRYOKU_X(SYM,    "Sym") \
 MIRYOKU_X(FUN,    "Fun") \
 MIRYOKU_X(GAME,   "Game")
-*/
 
-// Define GAME layer number (must be defined after MIRYOKU_LAYER_LIST override)
-// This ensures U_GAME is available when needed
-//#ifndef U_GAME
-//#define U_GAME 10
-//#endif
+// MIRYOKU_LAYERMAPPING_GAME uses default mapping (no key switch back to BASE)
+// Use the combo again to return to BASE layer
+#define MIRYOKU_LAYERMAPPING_GAME( \
+     K00, K01, K02, K03, K04,      K05, K06, K07, K08, K09, \
+     K10, K11, K12, K13, K14,      K15, K16, K17, K18, K19, \
+     K20, K21, K22, K23, K24,      K25, K26, K27, K28, K29, \
+     N30, N31, K32, K33, K34,      K35, K36, K37, N38, N39 \
+) \
+XXX  K00  K01  K02  K03  K04       K05  K06  K07  K08  K09  XXX \
+XXX  K10  K11  K12  K13  K14       K15  K16  K17  K18  K19  XXX \
+XXX  K20  K21  K22  K23  K24       K25  K26  K27  K28  K29  XXX \
+               K32  K33  K34       K35  K36  K37
 
-// Define GAME layer key bindings for Warzone (LEFT HAND ONLY)
-// Layout: Left half only - right side disabled for mouse use
-// Mouse handles: Aim, shoot, weapon switching (mouse wheel)
-// Top row: Reload (R), Interact (E), Ping (G), Chat (T), Scoreboard (TAB) | Right side disabled
-// Middle row: Movement (WASD), Interact (F) | Right side disabled  
-// Bottom row: Equipment (Q), Prone (Z), Equipment wheel (X), Melee (C), Armor plates (V) | Right side disabled
-// Thumbs: Ctrl (crouch), Space (jump), Shift (sprint) | Right thumbs disabled
-//#define MIRYOKU_ALTERNATIVES_GAME \
-//&kp R,             &kp E,             &kp G,             &kp T,             &kp TAB,           U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
-//&kp W,             &kp A,             &kp S,             &kp D,             &kp F,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
-//&kp Q,             &kp Z,             &kp X,             &kp C,             &kp V,             U_NP,              U_NP,             U_NP,             U_NP,             U_NP,             \
-//U_NP,              U_NP,              &kp LCTRL,         &kp SPACE,         &kp LSHFT,         U_NP,              U_NP,             U_NP,             U_NP,              U_NP
-
-// Define GAME layer selection
-//#if !defined(MIRYOKU_LAYER_GAME)
-//  #define MIRYOKU_LAYER_GAME MIRYOKU_ALTERNATIVES_GAME
-//#endif
-//#if !defined(MIRYOKU_LAYERMAPPING_GAME)
-//  #define MIRYOKU_LAYERMAPPING_GAME MIRYOKU_MAPPING
-//#endif
-
-// GAME Layer Activation:
-// 
-// EASIEST METHOD: Include the activation file in your keymap
-// Add this line to your keymap file (e.g., config/corne.keymap) after miryoku.dtsi:
-//
-//   #include "../miryoku/miryoku_game_activation.dtsi"
-//
-// This creates a combo: Hold both left thumb keys (Ctrl + Space) to toggle GAME layer
-//
-// ALTERNATIVE METHODS:
-//
-// 1. Toggle key: Add &to U_GAME to any key (press to enter, press again to exit)
-// 2. Momentary: Add &mo U_GAME to any key (hold to activate, release to exit)
-// 3. Layer-tap: Use U_LT(U_GAME, KEY) to hold for GAME, tap for key
-//
-// To use: Hold both left thumb keys simultaneously to toggle into GAME layer
-//         Hold them again to return to BASE layer
+#define U_BASE        0
+#define U_EXTRA       1
+#define U_TAP         2
+#define U_BUTTON      3
+#define U_NAV         4
+#define U_MOUSE       5
+#define U_MEDIA       6
+#define U_NUM         7
+#define U_SYM         8
+#define U_FUN         9
+#define U_GAME       10
