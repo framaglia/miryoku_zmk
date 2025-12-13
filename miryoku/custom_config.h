@@ -15,7 +15,7 @@ MIRYOKU_X(MEDIA,  "Media") \
 MIRYOKU_X(NUM,    "Num") \
 MIRYOKU_X(SYM,    "Sym") \
 MIRYOKU_X(FUN,    "Fun") \
-MIRYOKU_X(GAME,   "Game")
+//MIRYOKU_X(GAME,   "Game")
 
 // Define GAME layer number (must be defined after MIRYOKU_LAYER_LIST override)
 // This ensures U_GAME is available when needed
