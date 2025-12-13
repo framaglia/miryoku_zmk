@@ -7,15 +7,15 @@
     compatible = "zmk,combos";
     
     game_toggle_combo {
-      timeout-ms = <2000>;
-      key-positions = <32 33 34>;
+      timeout-ms = <30>;
+      key-positions = <33 34 35>;
       bindings = <&to U_GAME>;
       layers = <U_BASE>;
     };
     
     game_return_combo {
-      timeout-ms = <2000>;
-      key-positions = <32 33 34>;
+      timeout-ms = <30>;
+      key-positions = <33 34 35>;
       bindings = <&to U_BASE>;
       layers = <U_GAME>;
     };
