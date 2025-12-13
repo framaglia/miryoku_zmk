@@ -5,3 +5,4 @@
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku_game_layer_mapping.h"
 #include "../miryoku/miryoku.dtsi"
+#include "../miryoku/miryoku_game_activation.dtsi"
