@@ -1,0 +1,30 @@
+// Copyright 2021 Manna Harbour
+// https://github.com/manna-harbour/miryoku
+// GAME Layer Activation - Add this file to your keymap
+
+/ {
+  combos {
+    compatible = "zmk,combos";
+    
+    // Combo: Hold all 3 left thumb keys for 2 seconds to toggle GAME layer
+    // Adjust key-positions based on your keyboard layout
+    // For standard Miryoku: positions 32, 33, 34 are the left thumb keys
+    // (Ctrl, Space, Shift positions)
+    game_toggle_combo {
+      timeout-ms = <2000>;  // 2 seconds
+      key-positions = <32 33 34>;  // All 3 left thumb keys
+      bindings = <&to U_GAME>;  // Toggle to GAME layer
+      layers = <U_BASE>;
+    };
+    
+    // Alternative: Momentary GAME layer (hold all 3 thumbs for 2s to activate)
+    // Uncomment this and comment out game_toggle_combo above if you prefer momentary
+    // game_momentary_combo {
+    //   timeout-ms = <2000>;  // 2 seconds
+    //   key-positions = <32 33 34>;  // All 3 left thumb keys
+    //   bindings = <&mo U_GAME>;  // Momentary GAME layer
+    //   layers = <U_BASE>;
+    // };
+  };
+};
+
