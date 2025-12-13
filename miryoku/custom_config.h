@@ -2,6 +2,7 @@
 // https://github.com/manna-harbour/miryoku
 
 // Add GAME layer to the layer list
+// Must be defined before miryoku.h is included
 #undef MIRYOKU_LAYER_LIST
 #define MIRYOKU_LAYER_LIST \
 MIRYOKU_X(BASE,   "Base") \
@@ -16,8 +17,11 @@ MIRYOKU_X(SYM,    "Sym") \
 MIRYOKU_X(FUN,    "Fun") \
 MIRYOKU_X(GAME,   "Game")
 
-// Define GAME layer number
+// Define GAME layer number (must be defined after MIRYOKU_LAYER_LIST override)
+// This ensures U_GAME is available when needed
+#ifndef U_GAME
 #define U_GAME 10
+#endif
 
 // Define GAME layer key bindings for Warzone (LEFT HAND ONLY)
 // Layout: Left half only - right side disabled for mouse use
