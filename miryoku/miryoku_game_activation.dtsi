@@ -6,16 +6,43 @@
   combos {
     compatible = "zmk,combos";
     
+    // Test combo: Q+W should trigger GAME layer (to verify combos work)
+    // Q is position 1, W is position 2 (counting from 0, excluding XXX)
+    test_combo {
+      timeout-ms = <50>;
+      key-positions = <1 2>;
+      bindings = <&to U_GAME>;
+      layers = <U_BASE>;
+    };
+    
+    // Test different thumb positions - try these one at a time:
+    // Option 1: Positions 30, 31, 32
+    // game_toggle_combo {
+    //   timeout-ms = <2000>;
+    //   key-positions = <30 31 32>;
+    //   bindings = <&to U_GAME>;
+    //   layers = <U_BASE>;
+    // };
+    
+    // Option 2: Positions 36, 37, 38
+    // game_toggle_combo {
+    //   timeout-ms = <2000>;
+    //   key-positions = <36 37 38>;
+    //   bindings = <&to U_GAME>;
+    //   layers = <U_BASE>;
+    // };
+    
+    // Option 3: Positions 38, 39, 40
     game_toggle_combo {
-      timeout-ms = <30>;
-      key-positions = <33 34 35>;
+      timeout-ms = <2000>;
+      key-positions = <38 39 40>;
       bindings = <&to U_GAME>;
       layers = <U_BASE>;
     };
     
     game_return_combo {
-      timeout-ms = <30>;
-      key-positions = <33 34 35>;
+      timeout-ms = <2000>;
+      key-positions = <38 39 40>;
       bindings = <&to U_BASE>;
       layers = <U_GAME>;
     };
