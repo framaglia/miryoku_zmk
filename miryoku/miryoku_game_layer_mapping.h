@@ -4,6 +4,7 @@
 
 // Define GAME layer mapping (must be after MIRYOKU_MAPPING is defined)
 // This must be defined before miryoku.dtsi includes miryoku.h
+// Following the same pattern as miryoku_layer_selection.h does for other layers
 #if !defined(MIRYOKU_LAYERMAPPING_GAME)
   #define MIRYOKU_LAYERMAPPING_GAME MIRYOKU_MAPPING
 #endif
