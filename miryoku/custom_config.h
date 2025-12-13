@@ -10,11 +10,12 @@
 U_NP,              U_NP,              &kp LCTRL,         &kp SPACE,         &kp LSHFT,         U_NP,              U_NP,             U_NP,             U_NP,              U_NP
 
 // Define GAME layer selection (before layer list override)
-// Note: MIRYOKU_LAYERMAPPING_GAME will be defined after MIRYOKU_MAPPING is available
+// These must be defined before miryoku.h includes miryoku_layer_selection.h
 #if !defined(MIRYOKU_LAYER_GAME)
   #define MIRYOKU_LAYER_GAME MIRYOKU_ALTERNATIVES_GAME
 #endif
-// MIRYOKU_LAYERMAPPING_GAME will be defined in a separate file included after the mapping
+// Note: MIRYOKU_LAYERMAPPING_GAME will be defined in miryoku_game_layer_mapping.h
+// after MIRYOKU_MAPPING is available, but before miryoku.dtsi uses it
 
 // Add GAME layer to the layer list
 // Must be defined before miryoku.h is included (which includes miryoku_layer_list.h)
