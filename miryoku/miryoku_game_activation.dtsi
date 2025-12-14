@@ -1,61 +1,23 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
-// GAME Layer Activation - Add this file to your keymap
+// GAME Layer Activation - Hold all three left thumb keys for 2 seconds
 
 / {
   combos {
     compatible = "zmk,combos";
     
-    // Test combo: Q+W should trigger GAME layer (to verify combos work)
-    test_combo {
-      timeout-ms = <50>;
-      key-positions = <1 2>;
+    game_toggle_combo {
+      timeout-ms = <2000>;
+      key-positions = <38 39 40>;
       bindings = <&to U_GAME>;
       layers = <U_BASE>;
     };
     
-    // Test individual thumb keys to find their positions
-    // Try pressing Q + each thumb key to see which one triggers
-    // Uncomment one set at a time and test:
-    
-    // Option 1: Test if thumb keys are at positions 30, 31, 32
-    // thumb_test_30 {
-    //   timeout-ms = <50>;
-    //   key-positions = <1 30>;
-    //   bindings = <&to U_GAME>;
-    //   layers = <U_BASE>;
-    // };
-    
-    // Option 2: Test if thumb keys are at positions 36, 37, 38
-    // thumb_test_36 {
-    //   timeout-ms = <50>;
-    //   key-positions = <1 36>;
-    //   bindings = <&to U_GAME>;
-    //   layers = <U_BASE>;
-    // };
-    
-    // Option 3: Test if thumb keys are at positions 38, 39, 40 (most likely)
-    thumb_test_38 {
-      timeout-ms = <50>;
-      key-positions = <1 38>;
-      bindings = <&to U_GAME>;
-      layers = <U_BASE>;
+    game_return_combo {
+      timeout-ms = <2000>;
+      key-positions = <38 39 40>;
+      bindings = <&to U_BASE>;
+      layers = <U_GAME>;
     };
-    
-    // Once you find the first thumb position, we'll add all three
-    // For now, the full combo is commented out:
-    // game_toggle_combo {
-    //   timeout-ms = <2000>;
-    //   key-positions = <38 39 40>;
-    //   bindings = <&to U_GAME>;
-    //   layers = <U_BASE>;
-    // };
-    
-    // game_return_combo {
-    //   timeout-ms = <2000>;
-    //   key-positions = <38 39 40>;
-    //   bindings = <&to U_BASE>;
-    //   layers = <U_GAME>;
-    // };
   };
 };
