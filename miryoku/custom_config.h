@@ -5,11 +5,18 @@
 #define MIRYOKU_KLUDGE_SOFT_OFF
 
 // Step 3: Define the actual GAME layer (Warzone - left hand only)
-// QWERTY layout with gaming bindings, right side disabled for mouse use
+// QWERTY layout shifted one column right: T/G/B (column 5 that falls off) goes to column 0
+// Column 0: T, G, B (was column 4, now in column 0)
+// Column 1: Q, A, Z (was column 0, shifted right)
+// Column 2: W, S, X (was column 1, shifted right)
+// Column 3: E, D, C (was column 2, shifted right)
+// Column 4: R, F, V (was column 3, shifted right)
+// This moves WASD one column right for better hand position
+// Right side disabled for mouse use
 #define MIRYOKU_LAYER_GAME \
-&kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &none,             &none,             &none,             &none,             &none,             \
-&kp A,             &kp S,             &kp D,             &kp F,             &kp G,             &none,             &none,             &none,             &none,             &none,             \
-&kp Z,             &kp X,             &kp C,             &kp V,             &kp TAB,           &none,             &none,             &none,             &none,             &none,             \
+&kp T,             &kp Q,             &kp W,             &kp E,             &kp R,             &none,             &none,             &none,             &none,             &none,             \
+&kp G,             &kp A,             &kp S,             &kp D,             &kp F,             &none,             &none,             &none,             &none,             &none,             \
+&kp B,             &kp Z,             &kp X,             &kp C,             &kp V,             &none,             &none,             &none,             &none,             &none,             \
 &none,             &none,             &kp LCTRL,         &kp SPACE,         &kp LSHFT,         &none,             &none,             &none,             &none,             &none
 
 #define MIRYOKU_LAYERMAPPING_GAME MIRYOKU_MAPPING
